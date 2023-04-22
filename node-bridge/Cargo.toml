@@ -1,0 +1,14 @@
+[package]
+name = "node_bridge"
+version = "1.0.0"
+edition = "2021"
+description = "Simple rust script to achieve a bridge between node.js and rust. Use with the npm package rustlang-bridge"
+authors = ["PureSci"]
+repository = "https://github.com/PureSci/node-rust-bridge/"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "sync","macros"] }
+async_fn_traits = "0.1.1"
