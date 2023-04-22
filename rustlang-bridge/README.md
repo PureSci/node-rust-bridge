@@ -1,6 +1,6 @@
 # Rustlang Bridge
 
-Simple node.js script to achieve a bridge between rust and node.js. Use with the cargo crate node-bridge.
+Simple node.js script to achieve a bridge between rust and node.js. Use with the cargo crate node_bridge.
 Only 1 bridge can be initialized per rust program. But node.js can have many bridges.
 
 ## Installation
@@ -12,7 +12,7 @@ $ npm install rustlang-bridge
 Rust installation:
 Add the following line to your Cargo.toml under [dependencies]
 ```toml
-node_bridge = "1.0.0"
+node_bridge = "1.0.2"
 ```
 
 ## Usage/Examples

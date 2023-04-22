@@ -8,7 +8,7 @@ Only 1 bridge can be initialized per rust program. But node.js can have many bri
 Add the following line to your Cargo.toml under [dependencies]
 
 ```toml
-node_bridge = "1.0.0"
+node_bridge = "1.0.2"
 ```
     
 Node.js installation:

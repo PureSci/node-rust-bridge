@@ -318,7 +318,7 @@ impl NodeBridge {
     where
         F: AsyncFn2<Vec<String>, Option<D>, Output = T> + Send + Sync + 'static,
         <F as AsyncFn2<Vec<String>, Option<D>>>::OutputFuture: Send,
-        D: Send + Clone + Sync + 'static,
+        D: Send + Clone + 'static,
     {
         println!("fnregister_{}[_bridgeendline]", name);
         let (sender, mut receiver) = tokio::sync::mpsc::unbounded_channel();
@@ -330,10 +330,11 @@ impl NodeBridge {
                 match receiver.recv().await {
                     Some(mut params) => {
                         let id = params.remove(0);
+                        let pd = pass_data.clone();
                         println!(
                             "fnresponse_{}_{}[_bridgeendline]",
                             id,
-                            function(params, pass_data.clone()).await.to_string()
+                            function(params, pd).await.to_string()
                         );
                     }
                     None => {
